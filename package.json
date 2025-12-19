@@ -5,9 +5,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "astro": "^5.1.1"
+  },
+  "devDependencies": {
+    "@secretlint/secretlint-rule-preset-recommend": "^11.2.5",
+    "husky": "^9.1.7",
+    "secretlint": "^11.2.5"
   }
 }
