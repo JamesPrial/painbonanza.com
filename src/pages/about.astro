@@ -3,8 +3,71 @@ import Base from '../layouts/Base.astro';
 ---
 <Base title="About - The Slop Whisperer">
   <main>
-    <h1>About</h1>
-    <p>More about The Slop Whisperer coming soon.</p>
+    <header>
+      <h1>About</h1>
+      <p class="tagline">The origin story nobody asked for</p>
+    </header>
+
+    <section>
+      <h2>Who is The Slop Whisperer?</h2>
+      <p>
+        Short version: I'm a guy who figured out how to work with AI on the internet while everyone else was still arguing about whether it should exist.
+      </p>
+      <p>
+        Long version: keep reading.
+      </p>
+    </section>
+
+    <section>
+      <h2>How it started</h2>
+      <p>
+        It started on Reddit, the way most questionable life decisions do.
+      </p>
+      <p>
+        Around 2023 the floodgates opened. AI-generated content started showing up everywhere — comments, posts, entire subreddits that felt slightly off. Most people were annoyed. Some were alarmed. I was fascinated.
+      </p>
+      <p>
+        I started paying attention to what worked and what didn't. Which bot-generated posts got traction. Which ones got nuked by moderators in seconds. There were patterns — crude ones at first, but patterns. I started experimenting. Running bots, studying engagement, figuring out what made AI content land versus what made it feel like warmed-over garbage.
+      </p>
+      <p>
+        The whole experience was brutal and chaotic and weirdly educational. A real pain bonanza, if you will. The name stuck.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Slop Manifesto</h2>
+      <p>
+        Here's what I believe: AI content isn't going away. That ship sailed, hit an iceberg, and the iceberg was also AI-generated. The question was never "should this exist" — it was always "how do you make it not suck."
+      </p>
+      <p>
+        Most AI content is bad. Not because AI is bad, but because most people using it don't care enough to make it good. They hit generate, copy-paste, and move on. That's slop in the worst sense — low-effort filler that makes the internet slightly worse every time it gets published.
+      </p>
+      <p>
+        But there's another kind of slop. The kind where you actually work with the AI instead of just pointing it at a text box. Where you iterate, curate, develop a feel for what the model does well and where it falls apart. Where the output has a point of view because <em>you</em> have a point of view.
+      </p>
+      <p>
+        I leaned into the label. If the internet was going to call everything AI-touched "slop," then fine — I'd be the one making the good slop. The slop with intention. The slop that whispers.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I'm building now</h2>
+      <p>
+        These days I'm working on tools, content, and experiments at the intersection of AI and the internet. Some of that ends up on this blog. Some of it ends up as projects you can actually use. Some of it ends up in a folder called "bad ideas" that I'll probably open-source anyway.
+      </p>
+      <p>
+        The goal is simple: figure out what's possible when you take AI content seriously as a craft instead of treating it like a cheat code. And share what I find along the way.
+      </p>
+    </section>
+
+    <section class="links">
+      <h2>Find me</h2>
+      <ul>
+        <li><a href="https://github.com/JamesPrial">GitHub</a></li>
+        <li><a href="mailto:prialjames17@gmail.com">Email</a></li>
+        <li><a href="https://www.youtube.com/@TheSlopWhisperer">YouTube</a></li>
+      </ul>
+    </section>
   </main>
 
   <style>
@@ -13,11 +76,44 @@ import Base from '../layouts/Base.astro';
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
     }
+    header {
+      margin-bottom: 3rem;
+    }
     h1 {
       font-size: 2rem;
       font-weight: 700;
       color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .tagline {
+      color: #888;
+      font-size: 1.1rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #333;
+    }
+    section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    section p {
       margin-bottom: 1rem;
+    }
+    section p:last-child {
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </Base>
