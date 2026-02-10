@@ -1,0 +1,101 @@
+---
+const currentPath = Astro.url.pathname;
+
+const tabs = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Projects', href: '/projects/' },
+];
+---
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">The Slop Whisperer</a>
+    <ul class="nav-tabs">
+      {tabs.map((tab) => (
+        <li>
+          <a
+            href={tab.href}
+            class:list={['nav-tab', { active: currentPath === tab.href || currentPath === tab.href.slice(0, -1) }]}
+          >
+            {tab.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    border-bottom: 1px solid #1a1a1a;
+    background: #0a0a0a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .nav-brand {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .nav-brand:hover {
+    text-decoration: none;
+    color: #8ab4f8;
+  }
+  .nav-tabs {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-tab {
+    display: block;
+    padding: 0.85rem 1rem;
+    color: #888;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .nav-tab:hover {
+    color: #e0e0e0;
+    text-decoration: none;
+  }
+  .nav-tab.active {
+    color: #8ab4f8;
+    border-bottom-color: #8ab4f8;
+  }
+
+  @media (max-width: 480px) {
+    .nav-inner {
+      flex-direction: column;
+      padding: 0.5rem 1rem;
+      gap: 0;
+    }
+    .nav-brand {
+      padding: 0.5rem 0 0.25rem;
+    }
+    .nav-tabs {
+      width: 100%;
+      justify-content: space-around;
+    }
+    .nav-tab {
+      padding: 0.6rem 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+</style>
