@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<Base title="Blog - The Slop Whisperer">
+  <main>
+    <h1>Blog</h1>
+    {posts.length === 0 ? (
+      <p>Posts coming soon.</p>
+    ) : (
+      <ul class="post-list">
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`}>
+              <h2>{post.data.title}</h2>
+              <p class="description">{post.data.description}</p>
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </main>
+
+  <style>
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .post-list {
+      list-style: none;
+    }
+    .post-list li {
+      margin-bottom: 2rem;
+    }
+    .post-list a {
+      display: block;
+      padding: 1.25rem;
+      border: 1px solid #1a1a1a;
+      border-radius: 6px;
+      transition: border-color 0.15s;
+    }
+    .post-list a:hover {
+      border-color: #333;
+      text-decoration: none;
+    }
+    .post-list h2 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .description {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    time {
+      color: #666;
+      font-size: 0.85rem;
+    }
+  </style>
+</Base>
