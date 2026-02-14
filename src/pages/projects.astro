@@ -4,7 +4,15 @@ import Base from '../layouts/Base.astro';
 <Base title="Projects - The Slop Whisperer">
   <main>
     <h1>Projects</h1>
-    <p>Project showcase coming soon.</p>
+    <ul class="project-list">
+      <li>
+        <a href="https://github.com/JamesPrial/todo-log" target="_blank" rel="noopener noreferrer">
+          <h2>todo-log</h2>
+          <p class="description">A Claude Code plugin that automatically captures and logs all task activity. Runs silently via PostToolUse hooks, maintaining a complete audit trail of every TaskCreate and TaskUpdate in your projects. Supports JSON and SQLite storage backends.</p>
+          <p class="tech">Go · Claude Code Plugin</p>
+        </a>
+      </li>
+    </ul>
   </main>
 
   <style>
@@ -17,7 +25,38 @@ import Base from '../layouts/Base.astro';
       font-size: 2rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .project-list {
+      list-style: none;
+    }
+    .project-list li {
+      margin-bottom: 2rem;
+    }
+    .project-list a {
+      display: block;
+      padding: 1.25rem;
+      border: 1px solid #1a1a1a;
+      border-radius: 6px;
+      transition: border-color 0.15s;
+    }
+    .project-list a:hover {
+      border-color: #333;
+      text-decoration: none;
+    }
+    .project-list h2 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .description {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .tech {
+      color: #666;
+      font-size: 0.85rem;
     }
   </style>
 </Base>
