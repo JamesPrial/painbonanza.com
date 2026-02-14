@@ -6,10 +6,59 @@ import Base from '../layouts/Base.astro';
     <h1>Projects</h1>
     <ul class="project-list">
       <li>
+        <a href="https://github.com/JamesPrial/prial-plugins" target="_blank" rel="noopener noreferrer">
+          <h2>prial-plugins</h2>
+          <p class="description">A plugin marketplace for Claude Code that aggregates and serves my plugins from GitHub. The registry that ties everything below together.</p>
+          <p class="tech">Claude Code Marketplace</p>
+        </a>
+      </li>
+      <li>
         <a href="https://github.com/JamesPrial/todo-log" target="_blank" rel="noopener noreferrer">
           <h2>todo-log</h2>
-          <p class="description">A Claude Code plugin that automatically captures and logs all task activity. Runs silently via PostToolUse hooks, maintaining a complete audit trail of every TaskCreate and TaskUpdate in your projects. Supports JSON and SQLite storage backends.</p>
+          <p class="description">Automatically captures and logs all task activity in Claude Code. Runs silently via PostToolUse hooks, maintaining a complete audit trail of every TaskCreate and TaskUpdate. Supports JSON and SQLite storage backends.</p>
           <p class="tech">Go · Claude Code Plugin</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/JamesPrial/security-hooks" target="_blank" rel="noopener noreferrer">
+          <h2>security-hooks</h2>
+          <p class="description">A PreToolUse hook that scans staged files for secrets and credentials before git commits. Matches 26 secret patterns including AWS, Google, OpenAI, GitHub tokens, and database connection strings. Fail-closed design with zero external dependencies.</p>
+          <p class="tech">Go · Claude Code Plugin</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/JamesPrial/deep-research" target="_blank" rel="noopener noreferrer">
+          <h2>deep-research</h2>
+          <p class="description">Emulates Claude.ai's Deep Research feature inside Claude Code. Conducts parallel multi-agent web research and produces a structured, cited report with locally archived sources.</p>
+          <p class="tech">Claude Code Plugin</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/JamesPrial/golang-plugin" target="_blank" rel="noopener noreferrer">
+          <h2>golang-workflow</h2>
+          <p class="description">Specialized agents, idiomatic Go patterns, and automated code quality hooks for Go development. Features TDD-first parallel agents, intelligent failure triage, and compilation pre-flight checks.</p>
+          <p class="tech">Go · Claude Code Plugin</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/JamesPrial/go-plugin-release" target="_blank" rel="noopener noreferrer">
+          <h2>go-plugin-release</h2>
+          <p class="description">Guides you through setting up cross-platform binary compilation, distribution pipelines, and GitHub Actions CI/CD for Go-based Claude Code plugins.</p>
+          <p class="tech">Go · GitHub Actions · Claude Code Plugin</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/JamesPrial/bash-workflow" target="_blank" rel="noopener noreferrer">
+          <h2>bash-workflow</h2>
+          <p class="description">Bash development workflow with test-driven development, parallel agent orchestration, and DevOps review gates. Production-grade standards with bats-core and shellcheck integration.</p>
+          <p class="tech">Bash · Claude Code Plugin</p>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/JamesPrial/version-control" target="_blank" rel="noopener noreferrer">
+          <h2>version-control</h2>
+          <p class="description">Git operations and GitHub CLI workflows for repository management, issue and PR handling, and CI/CD workflow generation with OIDC and security scanning templates.</p>
+          <p class="tech">Python · Claude Code Plugin</p>
         </a>
       </li>
     </ul>
