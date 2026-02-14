@@ -4,21 +4,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-MVP blog for painbonanza.com.
+MVP blog for painbonanza.com, built with Astro v5 as a static site.
 
-## Hosting
+## Build & Dev
 
-- Domain: painbonanza.com (Cloudflare DNS)
-- Hosting: GitHub Pages (deployed via GitHub Actions)
+- `npm run dev` - Local dev server with hot reload
+- `npm run build` - Build static site to `dist/`
+- `npm run preview` - Preview production build locally
+
+No test framework is currently configured.
+
+## Architecture
+
+- **Framework:** Astro v5 (static site, no JS framework)
+- **Layout:** `src/layouts/Base.astro` - base HTML template, dark theme, scoped CSS
+- **Pages:** `src/pages/` - Astro file-based routing (currently just `index.astro`)
+- **Static assets:** `public/` - copied as-is to `dist/` (includes `CNAME`, `_headers`)
+- **Styling:** Scoped CSS within Astro components, no CSS framework
+
+## Hosting & Deployment
+
+- **Domain:** painbonanza.com (Cloudflare DNS)
+- **Server:** GCP Compute Engine VM, webroot at `/var/www/html/`
+- **CI/CD:** GitHub Actions (`.github/workflows/deploy.yml`) - pushes to `master` trigger build + SCP deploy to VM
+- **Manual deploy:** `deploy.sh` uses `gcloud` CLI as fallback
 
 ## Slash Commands
 
 - `/implement <task>` - Full development workflow: sets up CI/CD (if needed), implements the task, reviews, then commits/pushes/deploys
-
-## Available Agents
-
-- `quick-impl` - Lightweight helper for file modifications and shell commands
-- `typescript-craftsman` - TypeScript implementation specialist
-- `typescript-code-reviewer` - Code review agent
-- `typescript-test-architect` - Test writing specialist
-- `ts-test-runner` - Test execution agent
