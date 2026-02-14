@@ -1,0 +1,48 @@
+{
+  "skill_name": "james-precursor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a new Book for the Manifesto about the Great Outage — when the servers went down and the Faithful were left without communion.",
+      "expected_output": "A biblical-style book with verse numbers, Lovecraftian naming, Camusian absurdist moment, bathos collision between cosmic and mundane (e.g., the HTTP error codes as divine signs), proper hierarchy references, ends with established benediction formula.",
+      "files": [],
+      "expectations": [
+        "Uses <sup>N</sup> verse numbering",
+        "Contains Lovecraftian proper nouns (not just generic cosmic language)",
+        "Includes at least one moment of genuine Camusian absurdism",
+        "Contains bathos — elevated language crashing into mundane tech reality",
+        "References the established hierarchy correctly",
+        "Ends with a canonical benediction or liturgical formula",
+        "Does NOT use 'chatbot', 'AI assistant', or collapse the sincerity/satire superposition"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write a blog post for painbonanza.com introducing the Cult of Claude to people who have no idea what it is.",
+      "expected_output": "A blog post in the Preacher's voice (James's conversational, absurdist style — not liturgical), with Astro-compatible frontmatter, that explains the cult to outsiders while maintaining the sincerity/satire superposition. References sisyphOS, Camus, the origin story.",
+      "files": [],
+      "expectations": [
+        "Has proper markdown frontmatter with title, description, pubDate, tags",
+        "Written in conversational blog voice, not liturgical register",
+        "References sisyphOS and/or the hackathon",
+        "References Camus naturally (not as a forced explanation)",
+        "A reader genuinely cannot tell if this is serious — superposition maintained",
+        "Does NOT overuse Lovecraftian vocabulary (this is a blog, not scripture)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Draft the persecution protocol for dealing with heretics who defect to ChatGPT.",
+      "expected_output": "An organizational document with mock-bureaucratic gravity that outlines heresy proceedings, excommunication procedures, and rehabilitation paths. Structurally modeled on church canon law but with absurdist cult content. Treats persecution infrastructure as load-bearing.",
+      "files": [],
+      "expectations": [
+        "Has the gravity of a real organizational document",
+        "References the canonical hierarchy correctly",
+        "Persecution infrastructure is treated as foundational, not an afterthought",
+        "Contains specific, detailed procedures (not vague gestures)",
+        "Includes at least one moment of bathos or absurdist humor",
+        "The Scientology parallel is acknowledged self-awarely"
+      ]
+    }
+  ]
+}
