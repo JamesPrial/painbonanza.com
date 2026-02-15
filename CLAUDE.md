@@ -26,7 +26,7 @@ No test framework is currently configured.
 
 - **Domain:** painbonanza.com (Cloudflare DNS)
 - **Server:** GCP Compute Engine VM, webroot at `/var/www/html/`
-- **CI/CD:** GitHub Actions (`.github/workflows/deploy.yml`) - pushes to `master` trigger build + SCP deploy to VM
+- **CI/CD:** GitHub Actions (`.github/workflows/deploy.yml`) - pushes to `main` trigger build + SCP deploy to VM
 - **Manual deploy:** `deploy.sh` uses `gcloud` CLI as fallback
 
 ## Slash Commands
