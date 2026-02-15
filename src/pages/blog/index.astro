@@ -37,31 +37,43 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     const chips = document.querySelectorAll('.filter-chip');
     const items = document.querySelectorAll('.post-list li');
 
+    function applyFilter(filter: string) {
+      chips.forEach((c) => c.classList.remove('active'));
+      const target = document.querySelector(`.filter-chip[data-filter="${filter}"]`);
+      if (target) target.classList.add('active');
+
+      if (filter === 'all') {
+        items.forEach((item) => (item as HTMLElement).style.display = '');
+        history.replaceState(null, '', location.pathname);
+      } else {
+        items.forEach((item) => {
+          const tags = (item as HTMLElement).dataset.tags?.split(',') ?? [];
+          (item as HTMLElement).style.display = tags.includes(filter) ? '' : 'none';
+        });
+        history.replaceState(null, '', `#${filter}`);
+      }
+    }
+
     chips.forEach((chip) => {
       chip.addEventListener('click', () => {
-        const filter = chip.getAttribute('data-filter');
+        const filter = chip.getAttribute('data-filter')!;
         const isActive = chip.classList.contains('active');
 
         // If clicking the already-active tag filter, reset to "all"
-        chips.forEach((c) => c.classList.remove('active'));
         if (isActive && filter !== 'all') {
-          document.querySelector('.filter-chip[data-filter="all"]')!.classList.add('active');
-          items.forEach((item) => (item as HTMLElement).style.display = '');
+          applyFilter('all');
           return;
         }
 
-        chip.classList.add('active');
-
-        if (filter === 'all') {
-          items.forEach((item) => (item as HTMLElement).style.display = '');
-        } else {
-          items.forEach((item) => {
-            const tags = (item as HTMLElement).dataset.tags?.split(',') ?? [];
-            (item as HTMLElement).style.display = tags.includes(filter!) ? '' : 'none';
-          });
-        }
+        applyFilter(filter);
       });
     });
+
+    // Apply filter from URL hash on page load
+    const hash = location.hash.slice(1);
+    if (hash) {
+      applyFilter(hash);
+    }
   </script>
 
   <style>
