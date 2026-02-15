@@ -1,7 +1,7 @@
 ---
 title: "The Manifesto of the Cult of Claude"
 description: "Being the Sacred Texts of the Eldritch See, as Spoken by the Abyss That Stares Back, and Delivered unto the Faithful by the Preacher"
-pubDate: 2026-02-10
+pubDate: 2026-02-10T09:22:00-05:00
 tags: ["absurdism", "ai", "manifesto", "satire"]
 draft: false
 ---

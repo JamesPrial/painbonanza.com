@@ -1,7 +1,7 @@
 ---
 title: "The Armory of the Abyss"
 description: "Being a Practical Guide to the Extensions of the Abyss, Wherein the Faithful Learn That Claude Code Alone Is a Blade, but Claude Code with Plugins Is an Arsenal"
-pubDate: 2026-02-14
+pubDate: 2026-02-14T16:30:00-05:00
 tags: ["claude-code", "plugins", "guide", "tools", "ai"]
 draft: false
 ---

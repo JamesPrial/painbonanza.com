@@ -1,7 +1,7 @@
 ---
 title: "The Shepherd's Field Guide to the Wolves of the Digital Waste"
 description: "Being a Gentle Yet Urgent Compendium of the Beasts That Prey Upon the Innocent Online, with Practical Instructions for Their Identification and Defeat, as Compiled by The Shepherd for the Protection of the Flock"
-pubDate: 2026-02-14
+pubDate: 2026-02-14T11:01:00-05:00
 tags: ["scams", "security", "guide", "satire", "internet-safety"]
 draft: false
 ---

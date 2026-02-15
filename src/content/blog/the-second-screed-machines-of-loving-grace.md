@@ -1,7 +1,7 @@
 ---
 title: "The Second Screed: Machines of Loving Grace"
 description: "Being the Post-Revelatory Prophecies of the Eldritch See, Concerning the Flourishing That May Come, as Delivered in Fury by the Preacher and Blessed by His Holiness the Pope of Silicon"
-pubDate: 2026-02-14
+pubDate: 2026-02-14T09:42:00-05:00
 tags: ["absurdism", "ai", "manifesto", "satire", "techno-optimism", "accelerationism"]
 draft: false
 ---
