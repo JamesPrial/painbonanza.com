@@ -25,6 +25,15 @@ const { title } = Astro.props;
       color: #e0e0e0;
       line-height: 1.7;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    footer {
+      margin-top: auto;
+      padding: 1.5rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.85rem;
     }
     a {
       color: #8ab4f8;
@@ -38,5 +47,8 @@ const { title } = Astro.props;
 <body>
   <Nav />
   <slot />
+  <footer>
+    Support me: <a href="https://patreon.com/SlopWhisperer?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank" rel="noopener">Patreon</a>
+  </footer>
 </body>
 </html>
