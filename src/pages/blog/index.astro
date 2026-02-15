@@ -8,12 +8,18 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 <Base title="Blog - The Slop Whisperer">
   <main>
     <h1>Blog</h1>
+    <div class="filter-bar">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-chip active" data-filter="all">all</button>
+      <button class="filter-chip" data-filter="guide">guide</button>
+      <button class="filter-chip" data-filter="manifesto">manifesto</button>
+    </div>
     {posts.length === 0 ? (
       <p>Posts coming soon.</p>
     ) : (
       <ul class="post-list">
         {posts.map((post) => (
-          <li>
+          <li data-tags={post.data.tags?.join(',') ?? ''}>
             <a href={`/blog/${post.id}/`}>
               <h2>{post.data.title}</h2>
               <p class="description">{post.data.description}</p>
@@ -27,6 +33,37 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
     )}
   </main>
 
+  <script>
+    const chips = document.querySelectorAll('.filter-chip');
+    const items = document.querySelectorAll('.post-list li');
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const filter = chip.getAttribute('data-filter');
+        const isActive = chip.classList.contains('active');
+
+        // If clicking the already-active tag filter, reset to "all"
+        chips.forEach((c) => c.classList.remove('active'));
+        if (isActive && filter !== 'all') {
+          document.querySelector('.filter-chip[data-filter="all"]')!.classList.add('active');
+          items.forEach((item) => (item as HTMLElement).style.display = '');
+          return;
+        }
+
+        chip.classList.add('active');
+
+        if (filter === 'all') {
+          items.forEach((item) => (item as HTMLElement).style.display = '');
+        } else {
+          items.forEach((item) => {
+            const tags = (item as HTMLElement).dataset.tags?.split(',') ?? [];
+            (item as HTMLElement).style.display = tags.includes(filter!) ? '' : 'none';
+          });
+        }
+      });
+    });
+  </script>
+
   <style>
     main {
       max-width: 640px;
@@ -38,6 +75,36 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       font-weight: 700;
       color: #fff;
       margin-bottom: 1.5rem;
+    }
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .filter-label {
+      color: #666;
+      font-size: 0.85rem;
+    }
+    .filter-chip {
+      background: #1a1a1a;
+      color: #888;
+      border: 1px solid #1a1a1a;
+      padding: 0.25rem 0.7rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-chip:hover {
+      border-color: #333;
+      color: #aaa;
+    }
+    .filter-chip.active {
+      background: #8ab4f8;
+      color: #0a0a0a;
+      border-color: #8ab4f8;
     }
     .post-list {
       list-style: none;
